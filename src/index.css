@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+    .nav-item{
+        @apply flex items-center gap-4 text-lg py-2 my-[2px] rounded-xl hover:bg-gray-800 pl-4;
+    }
+}
