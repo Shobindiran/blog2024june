@@ -8,11 +8,16 @@ import { VscColorMode } from "react-icons/vsc";
 import { FaGithub } from "react-icons/fa6";
 import { LuDot } from "react-icons/lu";
 import { FaLinkedin } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 import { useEffect, useState } from "react";
 
 type theme = "dark" | "light"
 
-const SideBar = () => {
+interface SideBarProps{
+  onHamburgerClick:()=>void;
+}
+
+const SideBar: React.FC<SideBarProps> =({onHamburgerClick}) => {
   const [theme,setTheme] = useState<theme>("dark")
 
 
@@ -29,7 +34,8 @@ const SideBar = () => {
   },[theme])
 
   return (
-    <div className="h-screen bg-secondary dark:bg-secondary-dark text-text dark:text-text-dark pt-12 pl-4 pr-2 pb-5 flex flex-col justify-between">
+    <div className="h-screen relative bg-secondary dark:bg-secondary-dark text-text dark:text-text-dark pt-12 pl-4 pr-2 pb-5 flex flex-col justify-between">
+      <IoClose onClick={onHamburgerClick} className={`absolute top-5 right-5 text-3xl xl:hidden`}/>
       <div>
         <div className="pl-4">
             <img className=" size-32 rounded-full border-2  border-solid border-white object-cover"
