@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { IoHome } from "react-icons/io5";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { FaTags } from "react-icons/fa6";
@@ -47,11 +47,11 @@ const SideBar: React.FC<SideBarProps> =({onHamburgerClick}) => {
 
         {/* Navigations */}
         <ul className="mt-4">
-            <li><Link className="nav-item" to="/"><IoHome />Home</Link></li>
-            <li><Link className="nav-item" to="/categories"><FaBarsStaggered />Categories</Link></li>
-            <li><Link className="nav-item" to="tags"><FaTags />Tags</Link></li>
-            <li><Link className="nav-item" to="archives"><FaBoxArchive />Archives</Link></li>
-            <li><Link className="nav-item" to="about"><FaCircleInfo />About</Link></li>
+            <li><NavLink className={({isActive})=>isActive?"nav-item active":"nav-item"} to="/"><IoHome />Home</NavLink></li>
+            <li><NavLink className={({isActive})=>isActive?"nav-item active":"nav-item"} to="/categories"><FaBarsStaggered />Categories</NavLink></li>
+            <li><NavLink className={({isActive})=>isActive?"nav-item active":"nav-item"} to="tags"><FaTags />Tags</NavLink></li>
+            <li><NavLink className={({isActive})=>isActive?"nav-item active":"nav-item"} to="archives"><FaBoxArchive />Archives</NavLink></li>
+            <li><NavLink className={({isActive})=>isActive?"nav-item active":"nav-item"} to="about"><FaCircleInfo />About</NavLink></li>
         </ul>
       </div>
 
